@@ -130,6 +130,41 @@
           }
         }
       }
+    },
+    "etherpad-client": {
+      "root": "projects/etherpad-client",
+      "sourceRoot": "projects/etherpad-client/src",
+      "projectType": "library",
+      "prefix": "ngx",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/etherpad-client/tsconfig.lib.json",
+            "project": "projects/etherpad-client/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/etherpad-client/src/test.ts",
+            "tsConfig": "projects/etherpad-client/tsconfig.spec.json",
+            "karmaConfig": "projects/etherpad-client/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/etherpad-client/tsconfig.lib.json",
+              "projects/etherpad-client/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "lib-etherpad-client"

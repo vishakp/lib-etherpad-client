@@ -17,6 +17,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "etherpad-client": [
+        "dist/etherpad-client"
+      ],
+      "etherpad-client/*": [
+        "dist/etherpad-client/*"
+      ]
+    }
   }
 }
